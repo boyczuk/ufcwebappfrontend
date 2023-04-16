@@ -1,38 +1,71 @@
+/* App.css */
+
+/* Set background color */
+body {
+  background-color: #0d2235;
+}
+
+/* Container for the app */
 .App {
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the fighter list */
+.FighterList {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style for the fighter list title */
+.FighterList h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Style for the fighter list items */
+.FighterList ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for each fighter list item */
+.FighterList li {
+  background-color: #1c3b59;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer; /* Add cursor pointer to indicate clickable */
+  transition: background-color 0.2s ease-in-out; /* Add smooth transition effect */
+  border: 2px solid #2c5a82; /* Add border around the fighter item */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for each fighter list item on hover */
+.FighterList li:hover {
+  background-color: #2c5a82; /* Change background color on hover for visual feedback */
+}
+
+/* Style for fighter profile name */
+.FighterList h2 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for fighter profile details */
+.FighterList p {
+  color: #d9d9d9;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Style for "No fighters found" message */
+.FighterList p.no-fighters {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
 }

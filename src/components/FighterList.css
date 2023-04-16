@@ -1,0 +1,53 @@
+/* FighterList.css */
+.fighterListContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .fighterListTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .fighterList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .fighterListItem {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .fighterListItem:hover {
+    background-color: #a7a6a6; /* Updated hover color */
+  }
+  
+  .fighterProfile {
+    flex: 1;
+  }
+  
+  .fighterName {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .fighterInfo {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .fighterNoResults {
+    font-size: 16px;
+    color: #999;
+  }
+  
