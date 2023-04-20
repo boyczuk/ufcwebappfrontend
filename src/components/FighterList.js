@@ -26,12 +26,13 @@ const FighterList = () => {
             <li key={fighter._id} className="fighterListItem">
               <div className="fighterProfile">
                 <h2 className="fighterName">{fighter.profile.name}</h2>
+                <p className="fighterInfo">Record: {fighter.profile.record}</p>
+                <p className="fighterInfo">Division: {fighter.profile.division}</p>
+                <p className="fighterInfo">Location: {fighter.profile.location}</p>
+                <p className="fighterInfo">Age: {fighter.profile.age}</p>
                 <p className="fighterInfo">Height: {fighter.profile.height}</p>
                 <p className="fighterInfo">Weight: {fighter.profile.weight}</p>
-                <p className="fighterInfo">Division: {fighter.profile.division}</p>
                 <p className="fighterInfo">Reach: {fighter.profile.reach}</p>
-                <p className="fighterInfo">Wins: {fighter.profile.wins}</p>
-                <p className="fighterInfo">Losses: {fighter.profile.losses}</p>
               </div>
             </li>
           ))}
