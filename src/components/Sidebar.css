@@ -1,0 +1,56 @@
+.Sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #091724;
+    padding: 40px;
+    overflow-y: auto;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Collapsible {
+    margin-bottom: 20px;
+  }
+  
+  .Collapsible__Button {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .Collapsible__Button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .Collapsible__Content {
+    margin-top: 10px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .Collapsible__Content p {
+    margin-bottom: 0;
+  }
+  
+  .Collapsible__Content--open {
+    max-height: 1000px;
+    padding: 20px;
+  }
+  

@@ -1,11 +1,13 @@
 import React from "react";
-import FighterList from "./components/FighterList";
+import Home from "./pages/Home";
+import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <FighterList />
+      <Sidebar />
+      <Home />
     </div>
   );
 };
