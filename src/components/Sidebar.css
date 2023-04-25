@@ -40,7 +40,7 @@
     padding: 20px;
     font-size: 16px;
     line-height: 1.5;
-    max-height: 0;
+    
     overflow: hidden;
     transition: all 0.2s ease-in-out;
   }
@@ -53,4 +53,15 @@
     max-height: 1000px;
     padding: 20px;
   }
+
+  .Collapsible__Content__Links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+  }
   
+  .Collapsible__Content__Links a:hover {
+    background-color: #f2f2f2;
+    color: #555;
+  }

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './Sidebar.css';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -21,40 +22,35 @@ const Sidebar = () => {
   return (
     <div className="Sidebar">
       <div className="Collapsible">
+        <Link to="/">
+          <button className="Collapsible__Button">Home</button>
+        </Link>
+      </div>
+      <div className="Collapsible">
         <button className="Collapsible__Button" onClick={toggleCollapsible1}>
-          Fighters
+          myGym
         </button>
-        {isOpen1 && (
-          <div className="Collapsible__Content">
-            <p>Content 1</p>
-          </div>
-        )}
+        {isOpen1 && <div className="Collapsible__Content"></div>}
       </div>
       <div className="Collapsible">
         <button className="Collapsible__Button" onClick={toggleCollapsible2}>
-          myGym
+          Fighters
         </button>
         {isOpen2 && (
           <div className="Collapsible__Content">
-            <p>Content 2</p>
-          </div>
-        )}
-      </div>
-      <div className="Collapsible">
-        <button className="Collapsible__Button" onClick={toggleCollapsible3}>
-          TBD
-        </button>
-        {isOpen3 && (
-          <div className="Collapsible__Content">
-            <p>Content 3</p>
+            <div className="Collapsible__Content__Links">
+              <Link to="/fighters"> Fighter List </Link>
+            </div>
           </div>
         )}
       </div>
 
       <div>
-        <button>
-          <p>Login/Register</p>
-        </button>
+        <Link to="/login">
+          <button>
+            <p>Login/Register</p>
+          </button>
+        </Link>
       </div>
     </div>
   );
