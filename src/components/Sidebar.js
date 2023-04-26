@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -21,6 +21,11 @@ const Sidebar = () => {
 
   return (
     <div className="Sidebar">
+      <div className="website__logo">
+        <Link to="/">
+          UFC myGym
+        </Link>
+      </div>
       <div className="Collapsible">
         <Link to="/">
           <button className="Collapsible__Button">Home</button>
@@ -30,7 +35,13 @@ const Sidebar = () => {
         <button className="Collapsible__Button" onClick={toggleCollapsible1}>
           myGym
         </button>
-        {isOpen1 && <div className="Collapsible__Content"></div>}
+        {isOpen1 && (
+          <div className="Collapsible__Content">
+            <div className="Collapsible__Content__Links">
+              <Link to="/roster"> Roster </Link>
+            </div>
+          </div>
+        )}
       </div>
       <div className="Collapsible">
         <button className="Collapsible__Button" onClick={toggleCollapsible2}>

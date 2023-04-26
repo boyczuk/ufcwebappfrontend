@@ -1,0 +1,85 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.forgot-password {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  color: #2720ef;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}

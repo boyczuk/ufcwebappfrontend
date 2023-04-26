@@ -10,6 +10,12 @@
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
   }
   
+  .website__logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
   .Collapsible {
     margin-bottom: 20px;
   }

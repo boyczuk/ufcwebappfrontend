@@ -4,7 +4,6 @@ import "./Home.css";
 function Home() {
   return (
     <div>
-      <h1>UFC myGym</h1>
       <div className="text-box">
         <h2>Create your gym</h2>
         <p>Select and buy fighters to join your personal Gym.</p>
