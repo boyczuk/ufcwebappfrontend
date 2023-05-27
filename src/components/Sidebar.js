@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import pfp from "./assets/user-default.avif";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
 
   const toggleCollapsible1 = () => {
     setIsOpen1(!isOpen1);
@@ -15,12 +15,12 @@ const Sidebar = () => {
     setIsOpen2(!isOpen2);
   };
 
-  const toggleCollapsible3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-
   return (
     <div className="Sidebar">
+      <div className="user__profile__picture">
+        <img src={pfp} alt="Pfp" />
+      </div>
+
       <div className="website__logo">
         <Link to="/">
           UFC myGym
@@ -38,7 +38,7 @@ const Sidebar = () => {
         {isOpen1 && (
           <div className="Collapsible__Content">
             <div className="Collapsible__Content__Links">
-              <Link to="/roster"> Roster </Link>
+              <Link to="/myGym"> userGym </Link>
             </div>
           </div>
         )}

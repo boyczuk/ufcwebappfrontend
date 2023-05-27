@@ -6,21 +6,26 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/login", { email, password });
-      console.log(response.data);
-      <Link to="/"></Link>;
-    } catch (error) {
+      const response = await axios.post("/api/auth", { email, password });
+      console.log(response.message);
+      localStorage.setItem("token", response.data.token);
+      // redirect to home page on successful login
+      window.location.href = "/";
+    } catch (error) { 
       console.log(error);
+      setErrorMessage("Incorrect password or username");
     }
   };
 
   return (
     <div className="login-container">
       <h1>Login</h1>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
           <label>Email:</label>
