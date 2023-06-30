@@ -15,6 +15,8 @@ const Sidebar = () => {
     setIsOpen2(!isOpen2);
   };
 
+  // Check if valid auth token and if valid put name/pfp of respective user
+
   return (
     <div className="Sidebar">
       <div className="user__profile__picture">
