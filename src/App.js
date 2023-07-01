@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Sidebar from "./components/Sidebar";
 import Login from "./pages/Login";
 import Gym from "./pages/userGym";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import FighterList from "./pages/FighterList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -19,7 +19,6 @@ const App = () => {
           <Route path="/fighters" element={<FighterList />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        <Footer />
       </Router>
     </div>
   );

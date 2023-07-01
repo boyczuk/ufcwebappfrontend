@@ -20,60 +20,29 @@
     font-size: 2rem;
     color: #fff;
     text-decoration: none;
+    display: inline-block;
   }
 
-  .Collapsible {
-    margin-bottom: 20px;
-  }
-  
-  .Collapsible__Button {
-    display: block;
-    width: 100%;
-    background-color: #fff;
-    border: 2px solid #ddd;
-    color: #333;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .Collapsible__Button:hover {
-    background-color: #f2f2f2;
-  }
-  
-  .Collapsible__Content {
-    margin-top: 10px;
-    background-color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-    
-    overflow: hidden;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .Collapsible__Content p {
-    margin-bottom: 0;
-  }
-  
-  .Collapsible__Content--open {
-    max-height: 1000px;
-    padding: 20px;
-  }
-
-  .Collapsible__Content__Links a {
+  .logo__link {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
+  }  
+
+  .sidebar_button {
+    font-size: 30px;
+    padding: 45px 15px;
+    max-width: 300px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
   }
-  
-  .Collapsible__Content__Links a:hover {
-    background-color: #f2f2f2;
-    color: #555;
+
+  .sidebar_button:hover {
+    background-color: #333;
   }

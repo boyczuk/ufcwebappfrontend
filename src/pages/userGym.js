@@ -1,37 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import "./userGym.css";
 
-const UserGym = () => {
-  const [userData, setUserData] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false);
+const UserProfile = () => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchUser = async () => {
       try {
+        // Retrieve the token from your storage (e.g., localStorage)
+        const token = localStorage.getItem("token");
+
         const response = await axios.get("/api/users/me", {
-          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         });
-        setUserData(response.data);
-        setLoggedIn(true);
+
+        setUser(response.data);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
-    fetchData();
+
+    fetchUser();
   }, []);
 
-  if (!loggedIn) {
-    <Link to="/login"></Link>;
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
   return (
-    <div className="user-gym-container">
-      <h1>Welcome {userData.name}!</h1>
-      <p>Email: {userData.email}</p>
+    <div>
+      <h1>User Profile</h1>
+      <p>
+        <strong>Name:</strong> {user.name}
+      </p>
+      <p>
+        <strong>Email:</strong> {user.email}
+      </p>
+      {/* Display other user information as needed */}
     </div>
   );
 };
 
-export default UserGym;
+export default UserProfile;
