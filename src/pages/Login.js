@@ -23,7 +23,7 @@ const Login = () => {
           email,
           password,
         });
-        console.log(response.message);
+        console.log(response.data);
         setErrorMessage("");
         setUsername("");
         setName("");
@@ -31,13 +31,19 @@ const Login = () => {
         setEmail("");
         setPassword("");
 
-        window.location.href = "/";
+        // Store token as a cookie
+        //document.cookie = `token=${response.data.token}; path=/`;
+
+        //window.location.href = "/myGym";
       } else {
         const response = await axios.post("/api/auth", { email, password });
-        console.log(response.message);
-        localStorage.setItem("token", response.data.token);
 
-        console.log("Login successful!");
+        console.log(response);
+        // Store token as a cookie
+        
+        //document.cookie = `token=${response.headers.token}; path=/`;
+
+        //window.location.href = "/myGym";
       }
     } catch (error) {
       console.log(error);

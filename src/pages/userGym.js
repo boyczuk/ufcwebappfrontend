@@ -1,48 +1,29 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
 
-const UserProfile = () => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+const App = () => {
+  const [token, setToken] = useState('');
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        // Retrieve the token from your storage (e.g., localStorage)
-        const token = localStorage.getItem("token");
-
-        const response = await axios.get("/api/users/me", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        setUser(response.data);
-        setLoading(false);
-      } catch (error) {
+    fetch('/api/users/me')
+      .then(response => {
+        const authToken = response.headers.get('x-auth-token');
+        setToken(authToken);
+        return response.json();
+      })
+      .then(data => {
+        // Handle the response body if needed
+        console.log(data);
+      })
+      .catch(error => {
         console.log(error);
-      }
-    };
-
-    fetchUser();
+      });
   }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
 
   return (
     <div>
-      <h1>User Profile</h1>
-      <p>
-        <strong>Name:</strong> {user.name}
-      </p>
-      <p>
-        <strong>Email:</strong> {user.email}
-      </p>
-      {/* Display other user information as needed */}
+      <h1>Token: {token}</h1>
     </div>
   );
 };
 
-export default UserProfile;
+export default App;
